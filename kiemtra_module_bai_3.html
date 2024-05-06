@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(num) {
+        if (num < 2) return false;
+        if (num < 4) return true;
+        let i = 2;
+        while (i <= num / 2) {
+            if (num % i === 0) {
+                return false;
+            }
+            i++;
+        }
+        return true;
+    }
+    function printPrime(arr) {
+        let newArr = []
+        for (let i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                newArr.push(arr[i])
+            }
+        }
+        return newArr.sort((a, b) => a - b);
+    }
+    let arr = [2,3,4,6,7,9,11,13,15,17];
+    console.log(printPrime(arr));
+
+</script>
+</body>
+</html>

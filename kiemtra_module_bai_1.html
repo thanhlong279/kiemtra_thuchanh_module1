@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function importArr() {
+        let arr = [];
+        for (let i = 0; i < 20; i++) {
+            let element = +prompt(`Nhập phần tử thứ ${i + 1} của mảng: `);
+            while (isNaN(element) || !Number.isInteger(element)) {
+                element = +prompt("Mời bạn nhập lại. Phần tử phải là một số nguyên: ");
+            }
+            arr.push(element);
+        }
+        return arr;
+    }
+    let arr = importArr();
+    document.write(arr);
+    function signalArr(){
+       let sumEven = 0;
+       let sumOdd = 0;
+        for (let i = 0; i < 20; i++) {
+            if(arr[i] % 2 === 0){
+                sumEven += arr[i];
+            }else{
+                sumOdd += arr[i];
+            }
+        }
+        return sumEven - sumOdd;
+    }
+    let signal = signalArr(arr);
+    document.write(" tổng các số chẵn trừ tổng các số lẻ bằng: "+ signal);
+</script>
+</body>
+</html>
